@@ -1,0 +1,14 @@
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\bin\Debug\netcoreapp2.1\XDemoUnitTestProject1.deps.json
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\bin\Debug\netcoreapp2.1\XDemoUnitTestProject1.runtimeconfig.json
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\bin\Debug\netcoreapp2.1\XDemoUnitTestProject1.runtimeconfig.dev.json
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\bin\Debug\netcoreapp2.1\XDemoUnitTestProject1.dll
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\bin\Debug\netcoreapp2.1\XDemoUnitTestProject1.pdb
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\obj\Debug\netcoreapp2.1\XDemoUnitTestProject1.csprojAssemblyReference.cache
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\obj\Debug\netcoreapp2.1\XDemoUnitTestProject1.csproj.CoreCompileInputs.cache
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\obj\Debug\netcoreapp2.1\XDemoUnitTestProject1.AssemblyInfoInputs.cache
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\obj\Debug\netcoreapp2.1\XDemoUnitTestProject1.AssemblyInfo.cs
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\obj\Debug\netcoreapp2.1\XDemoUnitTestProject1.dll
+G:\Shivu\WorkingProjects\DemoInfiy\XDemoUnitTestProject1\obj\Debug\netcoreapp2.1\XDemoUnitTestProject1.pdb
