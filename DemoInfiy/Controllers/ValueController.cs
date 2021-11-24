@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -13,24 +13,23 @@ using Microsoft.Extensions.Configuration;
 
 namespace DemoInfiy.Controllers
 {
-    [EnableCors("AllowCors")]
     [Route("api/[controller]")]
    
-    public class ValueController : Controller
+    public class ValueController : ControllerBase
     {
         private readonly IConfiguration _configuration;
         private IHostingEnvironment hostingEnv;
        
 
-        public ValueController(IConfiguration configuration, IHostingEnvironment env)
+        public ValueController(IHostingEnvironment env)
         {
-            _configuration = configuration;
+           
             this.hostingEnv = env;
         }
 
         [HttpGet]
         [Route("GetSortedArrayValues")]
-        public JsonResult GetSortedArrayValues(int [] arr)
+        public int[]  GetSortedArrayValues(int [] arr)
         {
             string data = string.Empty;
             int temp;
@@ -46,19 +45,22 @@ namespace DemoInfiy.Controllers
                     }
                 }
             }
-            var path = Path.Combine(hostingEnv.ContentRootPath, @"TxtFiles\" + $"{Guid.NewGuid() + Convert.ToString(DateTime.Now.Second)}.txt");
-            using (FileStream fs = System.IO.File.Create(path))
+            if(hostingEnv !=null)
             {
-                string ids = String.Join(",", arr.Select(p => p.ToString()).ToArray());
-                byte[] content = new UTF8Encoding(true).GetBytes(ids);
-                fs.Write(content, 0, content.Length);
+                var path = Path.Combine(hostingEnv.ContentRootPath, @"TxtFiles\" + $"{Guid.NewGuid() + Convert.ToString(DateTime.Now.Second)}.txt");
+                using (FileStream fs = System.IO.File.Create(path))
+                {
+                    string ids = String.Join(",", arr.Select(p => p.ToString()).ToArray());
+                    byte[] content = new UTF8Encoding(true).GetBytes(ids);
+                    fs.Write(content, 0, content.Length);
+                }
             }
-            return Json(arr);
+            return (arr);
         }
 
         [HttpGet]
         [Route("GetLatestFileContents")]
-        public JsonResult GetLatestFileContents()
+        public ActionResult GetLatestFileContents()
         {
             var directory = new DirectoryInfo("TxtFiles");
             var myFile = (from f in directory.GetFiles()
@@ -66,7 +68,7 @@ namespace DemoInfiy.Controllers
                           select f).First();
             var Filename = @"TxtFiles\" + myFile.Name;
             var fileContents = System.IO.File.ReadAllLines(Filename);
-            return Json(new { Status = true, message = "Success", fileContents = fileContents, });
+            return Ok(fileContents);
         }
     }
 }
