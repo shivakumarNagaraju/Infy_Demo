@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
@@ -7,25 +7,35 @@ using DemoInfiy.Controllers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
 using System.Net.Http;
+using System.Threading.Tasks;
+using DemoInfiy.Controllers;
 
 namespace XUnitTestProject1
 {
     public class Test
     {
+        private HttpClient Client;
+        private ValueController _controller;
+
         [Fact]
-        public void TestPost()
+        public void TestCase()
         {
-            //var request = new
-            //{
-            //    //Url = "https://localhost:44315/api/Value/GetSortedArrayValues";
-            //}
-
-            //var response=await.clie
-
-            //int[] number = { 89, 76, 45, 92, 67, 12, 99 };
-            //int[] number2 = { 12, 45, 67, 76, 89, 92,99 };
-            //var controller = new ValueController();
-           
+            var controoler = new ValueController(null);
+            int[] num = { 3, 2, 1 };
+            int[] actualResult= { 1,2,3};
+            bool isequal=true;
+            var result = controoler.GetSortedArrayValues(num);
+            for(int i=0;i< actualResult.Length; i++)
+            {
+                if(actualResult[i] != result[i])
+                {
+                    isequal = false;
+                    break;
+                    
+                }
+            }
+            Assert.Equal(true, isequal);
         }
     }
 }
+
